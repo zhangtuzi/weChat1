@@ -1,0 +1,108 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+/* 以下为自己部分 */
+page{
+  background: #f5f5f5;
+}
+.containerCont{
+  height: 100%;
+  display: none;
+}
+.viewShow{
+  display: block;
+}
+.hotMessageList,.hotVideoList,.hotImgList{
+  margin:0 0 20rpx;
+  background: #fff;
+}
+.hotItemHeader{
+  padding: 20rpx;
+  line-height: 75rpx;
+}
+.profileIcon{
+  float: left;
+  width: 75rpx;
+  height: 75rpx;
+}
+.profileName{
+  float: left;
+  height: 75rpx;
+  line-height: 75rpx;
+  font-weight: bold;
+}
+.hotText,.hotImgWarp{
+  clear: both;
+  padding: 20rpx;
+}
+.hotImgWarp{
+  padding: 0 20rpx;
+}
+.viewDec{
+  padding-bottom: 10rpx;
+}
+.hotImgWarp .hotImg{
+  width: 100%;
+  height: auto;
+}
+.loadWarp{
+  display: none;
+  text-align: center;
+}
+.LoadShow{
+  display: block;
+}
+.loadIcon{
+  width: 40rpx;
+  height: 40rpx;
+  animation: loading 1s linear infinite;
+  -webkit-animation: loading 1s linear infinite;
+  -ms-animation: loading 1s linear infinite;
+  -moz-animation: loading 1s linear infinite;
+}
+@keyframes loading{
+  0%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.bottomTab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+}
+.bottomTab view{
+  float: left;
+  width:33.33%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 100rpx;
+}

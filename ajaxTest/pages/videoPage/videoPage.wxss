@@ -1,0 +1,15 @@
+.videoWarp{
+  margin: 20rpx;
+}
+.videoCom{
+  width: 100%;
+}
+.showMore{
+  margin:100rpx;
+  border: 1rpx solid #f5f5f5;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 75rpx;
+  background: #ff6600;
+  color: #fff;
+}

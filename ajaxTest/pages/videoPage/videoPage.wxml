@@ -1,0 +1,8 @@
+<!--videoPage.wxml-->
+<view class="videoWarp">
+  <video class="videoCom" src="{{videourl}}" show-center-play-btn
+   autoplay loop show-center-play-btn></video>
+   <!-- <video class="videoCom" src="http://wvideo.spriteapp.cn/video/2018/0703/5b3b5bee23668_wpd.mp4" show-center-play-btn
+   autoplay loop show-center-play-btn></video> -->
+</view>
+<view class="showMore" bindtap="goIndex">查看更多</view>

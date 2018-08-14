@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 笑话列表 -->
+  <scroll-view class="containerCont {{hotType == 2?'viewShow': ''}}" scroll-y
+    bindscrolltolower="loadNewData"
+    style="height:{{scrollHeight}};"
+    >
+    <view wx:for="{{hotMessageList}}" 
+    wx:key="hotMessage" wx:for-item="hotItem"
+    class="hotMessageList">
+        <view class="hotItemHeader">
+           <image src="{{hotItem.profile_image}}" 
+           class="profileIcon"></image>
+           <text class="profileName">{{hotItem.name}}</text>
+        </view>
+        <view class="hotText">{{hotItem.text}}</view>
+    </view>
+  </scroll-view>
+  <!-- 笑话列表结束 -->
+  <!-- 图片列表开始 -->
+  <scroll-view class="containerCont {{hotType == 3?'viewShow': ''}}" scroll-y
+    bindscrolltolower="loadNewData"
+    style="height:{{scrollHeight}};"
+    >
+    <view wx:for="{{hotImgList}}" 
+    wx:key="hotImg" wx:for-item="hotItem"
+    class="hotImgList">
+        <!-- <view class="hotItemHeader">
+           <image src="{{hotItem.profile_image}}" 
+           class="profileIcon"></image>
+           <text class="profileName">{{hotItem.name}}</text>
+        </view> -->
+        <view class="hotImgWarp">
+          <image class="hotImg" mode="widthFix" src="{{hotItem.cdn_img}}"></image>
+        </view>
+    </view>
+  </scroll-view>
+  <!-- 图片列表结束 -->
+  <!-- 视频列表开始 -->
+  <scroll-view class="containerCont {{hotType == 4?'viewShow': ''}}" scroll-y
+    bindscrolltolower="loadNewData"
+    style="height:{{scrollHeight}};"
+    >
+    <view wx:for="{{hotVideoList}}" 
+    wx:key="hotVideo" wx:for-item="hotItem"
+    class="hotVideoList">
+        <!-- <view class="hotItemHeader">
+           <image src="{{hotItem.profile_image}}" 
+           class="profileIcon"></image>
+           <text class="profileName">{{hotItem.name}}</text>
+        </view> -->
+        <view class="hotImgWarp"  data-videourl="{{hotItem.videouri}}" 
+        data-shareImg="{{hotItem.cdn_img}}" 
+        data-title="{{hotItem.text}}" bindtap="gotoVideo">
+          <image class="hotImg" mode="widthFix" src="{{hotItem.cdn_img}}"></image>
+          <view class="viewDec">
+              <text>{{hotItem.text}}</text>
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+  <!-- 视频列表结束 -->
+  <view class="loadWarp {{isLoadShow?'LoadShow': ''}}">
+        <image src="../../images/icon_loading.png" 
+        class="loadIcon"></image>
+        <text>加载中...</text>
+    </view>
+    <!-- 底部导航 -->
+    <view class="bottomTab">
+      <view bindtap="loadVideo">视频</view>
+      <view bindtap="loadImg">图片</view>
+      <view bindtap="loadMessage">笑话</view>
+    </view>
+</view>
